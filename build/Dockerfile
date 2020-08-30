@@ -22,9 +22,11 @@ ENV DOCS_BUILD="/tmp/out"
 ENV HOST="0.0.0.0"
 ENV PORT="8000"
 
+ADD src /
+
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=builder /install /usr/local
 
 EXPOSE 8000
 
-ENTRYPOINT ["mkdocs"]
+ENTRYPOINT ["mkweb"]

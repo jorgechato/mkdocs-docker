@@ -13,6 +13,7 @@ $ docker build --build-arg MKDOCS_VERSION=1.1.2 -t mkdocs -f build/Dockerfile .
 ### Produce
 
 ```bash
+$ docker run -i --rm -a stdout -v <mkdocs-project-folder>:/mkdocs mkdocs produce > /tmp/out-docker.tar.gz
 ```
 
 ### Serve
