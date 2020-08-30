@@ -13,3 +13,12 @@ def produce(input, output):
         tar.add('.')
 
     # Website produced correctly
+
+
+def serve(host, port, path):
+    with tarfile.open(fileobj=sys.stdin.buffer, mode='r|gz') as tar:
+        tar.extractall(path=path)
+
+    os.chdir(path)
+    print('Starting MKDocs')
+    os.system(f'mkdocs serve -a {host}:{port}')
