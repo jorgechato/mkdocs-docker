@@ -20,6 +20,9 @@ report.xml
 **/*.out
 out/
 tmp/
+tmp-*/
+res/test-*
+res/test.*
 release/
 server
 *.output
