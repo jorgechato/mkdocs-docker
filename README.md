@@ -107,7 +107,7 @@ Keep in mind to set the proper scope for the token.
 
 **Dependencies**
 
-- (Docker pipeline)[https://plugins.jenkins.io/docker-workflow/#documentation]
+- [Docker pipeline](https://plugins.jenkins.io/docker-workflow/#documentation)
 
 To produce to quay.io we need to set a new credential too, let's use the
 ID=`quay_credential` for that.
