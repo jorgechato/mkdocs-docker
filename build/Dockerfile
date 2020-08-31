@@ -24,6 +24,8 @@ ENV PORT="8000"
 
 ADD src /
 
+RUN pip install -e /mkweb
+
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=builder /install /usr/local
 
