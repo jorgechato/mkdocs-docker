@@ -82,6 +82,16 @@ $ docker run -i --rm -a stdout -v <mkdocs-project-folder>:/mkdocs mkdocs produce
 $ cat <file.tar.gz> | docker run -i --rm -a stdin -p 8000:8000 --name mkdocs mkdocs serve
 ```
 
+### Integration Test
+
+**Dependencies**
+
+- mkdocs
+
+```bash
+$ python src/mkweb/app/handler_test.py
+```
+
 ## CI/CD
 
 The Jenkinsfile is ready to work as multibranch pipeline.
@@ -94,3 +104,10 @@ $ docker run -d --name jenkins -p 8080:8080 -p 50000:50000 -v /tmp/jenkins:/var/
 In order to pull from a private repository you will need to generate a new
 Github token and add it as secret in Jenkins. We will use ID=`github_credential`.
 Keep in mind to set the proper scope for the token.
+
+**Dependencies**
+
+- (Docker pipeline)[https://plugins.jenkins.io/docker-workflow/#documentation]
+
+To produce to quay.io we need to set a new credential too, let's use the
+ID=`quay_credential` for that.
