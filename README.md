@@ -83,3 +83,14 @@ $ cat <file.tar.gz> | docker run -i --rm -a stdin -p 8000:8000 --name mkdocs mkd
 ```
 
 ## CI/CD
+
+The Jenkinsfile is ready to work as multibranch pipeline.
+If you don't have a Jenkins instance run:
+
+```bash
+$ docker run -d --name jenkins -p 8080:8080 -p 50000:50000 -v /tmp/jenkins:/var/jenkins_home jenkins/jenkins:lts
+```
+
+In order to pull from a private repository you will need to generate a new
+Github token and add it as secret in Jenkins. We will use ID=`github_credential`.
+Keep in mind to set the proper scope for the token.
